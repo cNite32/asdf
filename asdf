@@ -1,3 +1,10 @@
+        @client.event
+async def on_raw_reaction_add(payload):
+    message_id = payload.message_id
+    if message_id == 619520308348452889:
+        guild_id = payload.guild_id
+        guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)
+
         member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
         if payload.emoji.name == "bewerben":
             print("Detected reaction")
@@ -86,3 +93,84 @@
                 embed80.add_field(name="**CSGO Bewerbung**", value=msg2.content)
 
                 await client.get_channel(611666205002039296).send(embed=embed80)
+
+
+
+            if msg.content == "2":
+                embed9 = discord.Embed(color=discord.Color.red(), description="**Fortnite Bewerbung**")
+                embed9.timestamp = datetime.datetime.utcnow()
+                embed9.add_field(name="**Wie ist dein echter Name?**", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed9)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed10 = discord.Embed(color=discord.Color.red(), description="**Fortnite Bewerbung**")
+                embed10.timestamp = datetime.datetime.utcnow()
+                embed10.add_field(name="**Wie alt bist du?**", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed10)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed11 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed11.timestamp = datetime.datetime.utcnow()
+                embed11.add_field(name="Wie lange spielst du schon Fortnite?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed11)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed12 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed12.timestamp = datetime.datetime.utcnow()
+                embed12.add_field(name="Was sind deine stärken?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed12)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed13 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed13.timestamp = datetime.datetime.utcnow()
+                embed13.add_field(name="Was sind deine schwächen?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed13)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed14 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed14.timestamp = datetime.datetime.utcnow()
+                embed14.add_field(name="Den Fortnite Tracker Link bitte", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed14)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed15 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed15.timestamp = datetime.datetime.utcnow()
+                embed15.add_field(name="Wie bist du auf unseren Clan gestoßen?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed15)
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed16 = discord.Embed(color=discord.Color.red(), value="Fortnite Bewerbung")
+                embed16.timestamp = datetime.datetime.utcnow()
+                embed16.add_field(name="Wieso möchtest du in unseren Clan?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed16)
+
+
+                msg3 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed900 = discord.Embed(color=discord.Color.blue(), description="**Fortnite Bewerbung**")
+                embed900.timestamp = datetime.datetime.utcnow()
+                embed900.add_field(name="**Danke für Ihre Bewerbung**", value="Ihre Bewerbung ist bei uns eingegangen, bitte gelduden sie sich ein wenig!")
+
+                await member.send(embed=embed900)
+
+                embed800 = discord.Embed(color=discord.Color.orange(), description=f"**Bewerbung **{member.mention}")
+                embed800.timestamp = datetime.datetime.utcnow()
+                embed800.add_field(name="**Fortnite Bewerbung**", value=msg3.content)
+
+                await client.get_channel(611666205002039296).send(embed=embed800)
+
