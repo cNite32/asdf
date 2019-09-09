@@ -1,0 +1,88 @@
+        member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
+        if payload.emoji.name == "bewerben":
+            print("Detected reaction")
+
+            embed = discord.Embed(color=discord.Color.dark_blue(), description="**nö eSport Bewerbung**")
+            embed.timestamp = datetime.datetime.utcnow()
+            embed.add_field(name="**Für was willst du dich bewerben?**", value="Schreibe bitte die Nummer deines Spiels in den Chat! \nVerfügbar: \n- [1] CSGO \n- [2] Fortnite")
+
+            await member.send(embed=embed)
+
+            msg = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+            if msg.content == "1":
+                embed1 = discord.Embed(color=discord.Color.red(), description="**CSGO Bewerbung**")
+                embed1.timestamp = datetime.datetime.utcnow()
+                embed1.add_field(name="**Wie ist dein echter Name?**", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed1)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed2 = discord.Embed(color=discord.Color.red(), description="**CSGO Bewerbung**")
+                embed2.timestamp = datetime.datetime.utcnow()
+                embed2.add_field(name="**Wie alt bist du?**", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed2)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed3 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed3.timestamp = datetime.datetime.utcnow()
+                embed3.add_field(name="Wie lange spielst du schon CSGO?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed3)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed4 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed4.timestamp = datetime.datetime.utcnow()
+                embed4.add_field(name="Wie viele Spielstunden hast du in CsGo", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed4)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed5 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed5.timestamp = datetime.datetime.utcnow()
+                embed5.add_field(name="Welchen rank hast du in CsGo?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed5)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed6 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed6.timestamp = datetime.datetime.utcnow()
+                embed6.add_field(name="Hast du Feceit?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed6)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed7 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed7.timestamp = datetime.datetime.utcnow()
+                embed7.add_field(name="Wie bist du auf unseren Clan gestoßen?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed7)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed8 = discord.Embed(color=discord.Color.red(), value="CSGO Bewerbung")
+                embed8.timestamp = datetime.datetime.utcnow()
+                embed8.add_field(name="Wieso möchtest du in unseren Clan?", value="Schreibe bitte die Antworten warheitsgemäß in den Chat")
+
+                await member.send(embed=embed8)
+
+                msg2 = await client.wait_for("message", timeout=None, check=lambda message: message.author == member)
+
+                embed90 = discord.Embed(color=discord.Color.blue(), description="**R6 eSport**")
+                embed90.timestamp = datetime.datetime.utcnow()
+                embed90.add_field(name="**Danke für Ihre Bewerbung**", value="Ihre Bewerbung ist bei uns eingegangen, bitte gelduden sie sich ein wenig!")
+
+                await member.send(embed=embed90)
+
+                embed80 = discord.Embed(color=discord.Color.orange(), description=f"**Bewerbung **{member.mention}")
+                embed80.timestamp = datetime.datetime.utcnow()
+                embed80.add_field(name="**CSGO Bewerbung**", value=msg2.content)
+
+                await client.get_channel(611666205002039296).send(embed=embed80)
